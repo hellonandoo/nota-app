@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rekap Nota Mingguan</title>
+</head>
+<body>
+    <h1>Rekap Nota Mingguan</h1>
+    <table border="1">
+        <tr>
+            <th>Tanggal</th>
+            <th>Keterangan</th>
+            <th>Foto</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item.Tanggal }}</td>
+            <td>{{ item.Keterangan }}</td>
+            <td><img src="{{ '/' + item.Foto }}" width="100"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Kembali ke Form</a> |
+    <a href="/export_pdf">Unduh PDF Mingguan</a>
+</body>
+</html>
